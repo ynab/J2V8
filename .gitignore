@@ -37,3 +37,5 @@ test-mockup-os-release
 *.tar.*
 
 local.properties
+.socket-scans/
+.socket.facts.json

@@ -9,18 +9,19 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v1
+      uses: actions/checkout@9f698171ed81b15d1823a05fc7211befd50c8ae0 # v6.0.3
 
-    - name: Set Up JDK
-      uses: actions/setup-java@v1
+    - name: Set up JDK 17
+      uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5.4.0
       with:
-        java-version: 8
+        distribution: temurin
+        java-version: 17
 
     - name: Build release .aar
       run: ./gradlew assembleRelease
 
     - name: Archive J2V8 Android aar
-      uses: actions/upload-artifact@v1.0.0
+      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
       with:
         name: j2v8-android-aar
         path: build/outputs/aar/j2v8-release.aar
